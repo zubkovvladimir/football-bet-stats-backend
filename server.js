@@ -5,11 +5,11 @@ const port = process.env.PORT || 3000;
 const http = require("https");
 
 server.use((req, res, next) => {
-  // res.header("Access-Control-Allow-Origin", "http://localhost:9000");
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://football-bet-stats.vercel.app"
-  );
+  res.header("Access-Control-Allow-Origin", "http://localhost:9000");
+  // res.header(
+  //   "Access-Control-Allow-Origin",
+  //   "https://football-bet-stats.vercel.app"
+  // );
   // res.header("Access-Control-Allow-Headers", "*");
   next();
 });
@@ -37,9 +37,9 @@ server.get("/football", (req, res) => {
                 (item) => item.ID === 70
               );
               const isTime = game.SC.TS;
-              const isTimeLessThan70 = game.SC.TS < 4200;
+              const isTimeLessThan62 = game.SC.TS < 3720;
 
-              if (corners && isTime && isTimeLessThan70) {
+              if (corners && isTime && isTimeLessThan62) {
                 const isManyCorners = corners.S1 >= 5 || corners.S2 >= 5;
 
                 if (isManyCorners) {

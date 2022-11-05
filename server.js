@@ -5,12 +5,12 @@ const port = process.env.PORT || 3000;
 const http = require("https");
 
 server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:9000");
-  // res.header(
-  //   "Access-Control-Allow-Origin",
-  //   "https://football-bet-stats.vercel.app"
-  // );
-  // res.header("Access-Control-Allow-Headers", "*");
+  // res.header("Access-Control-Allow-Origin", "http://localhost:9000");
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://football-bet-stats.vercel.app"
+  );
+  res.header("Access-Control-Allow-Headers", "*");
   next();
 });
 
